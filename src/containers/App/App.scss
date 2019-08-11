@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: $grey-color;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+
+%card-padding {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  box-sizing: border-box;
+
+  .card {
+    &-body {
+      display: flex;
+      flex-flow: column wrap;
+      background-color: $white-color;
+
+      .image {
+        width: 100%;
+        height: 250px;
+
+        @media (max-width: $tablet-max-width) {
+          height: 200px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+          height: 150px;
+        }
+      }
+
+      .metadata {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 10px;
+
+        .link {
+          color: $shadow-color;
+        }
+      }
+
+      @extend %card-padding;
+    }
+
+    &-footer {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      background-color: $grey-color;
+
+      .avatar {
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        margin-right: 5px;
+      }
+
+      .user {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $violet-color;
+      }
+
+      @extend %card-padding;
+    }
+  }
+}

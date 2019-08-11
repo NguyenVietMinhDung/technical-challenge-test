@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  color: $white-color;
+  background-color: $violet-color;
+  padding: 10px 20px;
+
+  &:hover {
+    border: 2px solid $violet-color;
+    color: $violet-color;
+    background-color: $white-color;
+  }
+}

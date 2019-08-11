@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+
+  & > div {
+    width: 25%;
+
+    @media (max-width: $tablet-max-width) {
+      width: calc(100%/3);
+    }
+
+    @media (max-width: $mobile-max-width) {
+      width: 50%;
+      padding: 5px;
+    }
+  }
+}
