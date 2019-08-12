@@ -6,8 +6,8 @@ const getImages = offset => (
   fetch(`${URL}?api_key=${API_KEY}&limit=${LIMITATION}&offset=${offset}`)
     .then(res => res.json())
     .then(jsonRes => jsonRes.data.map(item => ({
-      key: item.id,
       link: item.url,
+      key: item.images.downsized.url,
       imgUrl: item.images.downsized.url,
       avatarUrl: item.user ? item.user.avatar_url : null,
       username: item.user ? item.user.username : null,

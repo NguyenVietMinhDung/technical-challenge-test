@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> renders correctly 1`] = `
+<Fragment>
+  <div
+    className="black-mask"
+    onClick={[Function]}
+  />
+  <div
+    className="container"
+  >
+    <img
+      alt=""
+      className="modal-body"
+      src="test-file-stub"
+    />
+  </div>
+</Fragment>
+`;

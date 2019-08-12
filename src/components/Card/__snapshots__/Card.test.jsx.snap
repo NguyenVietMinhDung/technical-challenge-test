@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> renders correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="card-body"
+  >
+    <img
+      alt=""
+      className="image"
+      onClick={[Function]}
+      src="test-file-stub"
+    />
+    <div
+      className="metadata"
+    >
+      <a
+        className="link"
+        href="https://developers.giphy.com/docs"
+        target="_blank"
+      >
+        <i
+          className="lni-paperclip size-sm"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="card-footer"
+  >
+    <img
+      alt=""
+      className="avatar"
+      src="test-file-stub"
+    />
+    <span
+      className="user"
+    >
+      Dung VM Nguyen
+    </span>
+  </div>
+</div>
+`;

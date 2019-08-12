@@ -1,4 +1,5 @@
+import { Node } from 'react';
+
 export type Props = {
-  items: Array<>,
-  toggleModal: Function,
+  children: Node,
 };

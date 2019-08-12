@@ -78,7 +78,7 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(jpg|jpeg|png)$": "<rootDir>/src/__mocks__/fileMocks.js",
+    "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/__mocks__/fileMocks.js",
     "\\.(css|scss)$": "identity-obj-proxy",
   },
 
@@ -171,9 +171,9 @@ module.exports = {
   // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: [
-    "/node_modules/(?!react-spinners).+\\.js$",
-  ],
+  // transformIgnorePatterns: [
+  //   "/node_modules/(?!react-spinners).+\\.js$",
+  // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

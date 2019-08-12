@@ -7,11 +7,11 @@
   & > div {
     width: 25%;
 
-    @media (max-width: $tablet-max-width) {
+    @media (max-width: $tablet-breakpoint) {
       width: calc(100%/3);
     }
 
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: $mobile-breakpoint) {
       width: 50%;
       padding: 5px;
     }

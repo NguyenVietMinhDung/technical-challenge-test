@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-alert */
+// @flow
+import React, { memo, useEffect, useState } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './App.scss';
 import type { Props } from './types';
@@ -12,48 +14,50 @@ import Modal from '../../components/Modal';
 const App = (props: Props) => {
   const { selectedImgUrl, isVisible, toggleModal } = props;
   const [data, setData] = useState([]);
-  const handleClickEvent = () => {
-    const offset = data.length - 1;
+  const [loadingStatus, setLoadingStatus] = useState(false);
+  const fetchImages = (offset) => {
     getImages(offset).then(
       (result) => {
         setData(data.concat(result));
+        if (!loadingStatus) {
+          setLoadingStatus(true);
+        }
       },
       (error) => {
         alert(error);
       },
     );
   };
+  const handleClickEvent = () => {
+    const offset = data.length - 1;
+    fetchImages(offset);
+  };
   useEffect(() => {
-    getImages(0).then(
-      (result) => {
-        setData(result);
-      },
-      (error) => {
-        alert(error);
-      },
-    );
+    fetchImages(0);
   }, []);
   return (
-    <div styleName="container">
-      <Gallery>
-        {data.map(item => (
-          <Card
-            toggleModal={toggleModal}
-            {...item}
-          />
-        ))}
-      </Gallery>
-      <Button
-        btnTxt={LOAD_MORE_TXT}
-        handleClickEvent={handleClickEvent}
-      />
-      <Modal
-        selectedImgUrl={selectedImgUrl}
-        isVisible={isVisible}
-        toggleModal={toggleModal}
-      />
-    </div>
+    loadingStatus ? (
+      <div styleName="container">
+        <Gallery>
+          {data.map(item => (
+            <Card
+              toggleModal={toggleModal}
+              {...item}
+            />
+          ))}
+        </Gallery>
+        <Button
+          btnTxt={LOAD_MORE_TXT}
+          handleClickEvent={handleClickEvent}
+        />
+        <Modal
+          selectedImgUrl={selectedImgUrl}
+          isVisible={isVisible}
+          toggleModal={toggleModal}
+        />
+      </div>
+    ) : null
   );
 };
 
-export default CSSModules(App, styles);
+export default memo<Props>(CSSModules(App, styles));

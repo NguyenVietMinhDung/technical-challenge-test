@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import React, { memo } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './Modal.scss';
 import type { Props } from './types';
@@ -25,4 +26,4 @@ const Modal = (props: Props) => {
   );
 };
 
-export default CSSModules(Modal, styles);
+export default memo<Props>(CSSModules(Modal, styles));
