@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import React, { memo } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './Gallery.scss';
 import type { Props } from './types';
@@ -12,4 +13,4 @@ const Gallery = (props: Props) => {
   );
 };
 
-export default CSSModules(Gallery, styles);
+export default memo<Props>(CSSModules(Gallery, styles));

@@ -18,15 +18,24 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpe?g)$/,
+        test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            regExp: /(?!favicon.png)$/,
-            outputPath: 'assets/images',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              regExp: /(?!favicon.png)$/,
+              outputPath: 'assets/images',
+            },
           },
-        },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ]
       },
       {
         test: /favicon\.png$/,

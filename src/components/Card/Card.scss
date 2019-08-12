@@ -20,12 +20,13 @@
       .image {
         width: 100%;
         height: 250px;
+        background: url($loading-url) 50% no-repeat;
 
-        @media (max-width: $tablet-max-width) {
+        @media (max-width: $tablet-breakpoint) {
           height: 200px;
         }
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $mobile-breakpoint) {
           height: 150px;
         }
       }
@@ -48,7 +49,7 @@
       display: flex;
       flex-flow: row wrap;
       align-items: center;
-      background-color: $grey-color;
+      background-color: $light-grey-color;
 
       .avatar {
         width: 25px;

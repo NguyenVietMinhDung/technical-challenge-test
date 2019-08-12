@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import React, { memo } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './Button.scss';
 import type { Props } from './types';
@@ -16,4 +17,4 @@ const Button = (props: Props) => {
   );
 };
 
-export default CSSModules(Button, styles);
+export default memo<Props>(CSSModules(Button, styles));
